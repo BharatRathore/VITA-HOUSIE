@@ -1,10 +1,60 @@
-.words{
+
+
+html {
+    height: 100%;
+    box-sizing: border-box;
+  }
+  
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+  
+  body {
+    position: relative;
+    margin: 0;
+    padding-bottom: 6rem;
+    min-height: 100%;
+    
+  }
+  .words{
     border: 1px solid black;
     padding: 5px;
-    width: 100px;
+    width: 150px;
     
 }
 .word-display{
     display: block;
     margin-left: 50%;
 }
+#no-of-tickets{
+    width:15vw;
+}
+
+footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 6rem;
+    background-color: #efefef;
+    text-align: center;
+  }
+
+  .theme {
+    width:30% !important;
+  }
+  
+
+  @media only screen and (max-width: 480px) {
+    .theme {
+      width:100% !important;
+    }
+  }
+
+
+
+
+
+
