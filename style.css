@@ -3,6 +3,9 @@
 html {
     height: 100%;
     box-sizing: border-box;
+    
+    scroll-behavior: smooth;
+    
   }
   
   *,
@@ -16,12 +19,18 @@ html {
     margin: 0;
     padding-bottom: 6rem;
     min-height: 100%;
+    font-family: 'Poppins', sans-serif !important;
     
   }
   .words{
-    border: 1px solid black;
+    border: 1px solid;
     padding: 5px;
     width: 150px;
+    height:90px;
+    
+    text-align: center;
+    
+
     
 }
 .word-display{
@@ -51,10 +60,62 @@ footer {
     .theme {
       width:100% !important;
     }
+    
   }
 
+  
+  .avoid td{
+    text-align: center;
+    width:180px;
+    height: 60px;
+    font-size: small;
+  }
 
+  @media print{
+    .avoid{
+      
+      page-break-inside: avoid;
+    }
+  }
 
+  #myBtn {
+    display: block; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 60px; /* Place the button at the bottom of the page */
+    left: 30px; /* Place the button 30px from the right */
+    
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+     
+     /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 50%; /* Rounded corners */
+    font-size: 18px; /* Increase font size */
+  }
+  #myBtn i{
+    font-size: 35px;
+  }
+  .prize td{
+    max-width:280px;
+  }
+ 
+
+.clr-btn {
+  height:20px;
+  width:20px;
+  outline: none !important;
+  border-radius: 50%;
+  border: none;
+  margin:5px;
+  transition: all 0.1s ease-in-out;
+} 
+.clr-btn:hover{
+  transform: scale(1.5);
+  animation: ease-in;
+  margin:5px 10px 0 10px;
+
+}
 
 
 

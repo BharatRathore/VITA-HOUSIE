@@ -1,11 +1,13 @@
 <!doctype html>
 <html lang="en">
-  <head>
+  <head id="head">
     <title>VITA BINGO</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" media="all">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.6/css/flag-icon.min.css">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-162068023-2"></script>
     <script>
@@ -16,32 +18,128 @@
       gtag('config', 'UA-162068023-2');
     </script>
 
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" media="all" rel="stylesheet">
+
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" media="all" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body>
-
-
-    <div class="shadow container py-2">
-    <h1 class="text-center">VITA BINGO</h1>
+    <div class="wrapper">
+    <nav class="navbar navbar-expand navbar-dark bg-dark mb-3 sticky-top" >
+        <div class="nav navbar-nav">
+            <a class="nav-item nav-link active" href="#top">SM VITA BINGO <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="#" data-toggle="modal" data-target="#rulesmodal">RULES</a>
+            <a class="nav-item nav-link" href="#" data-toggle="modal" data-target="#prizemodal">PRIZE</a>
+        </div>
+    </nav>
+    <span id="top m-0"></span>
+    <div class="shadow container py-2 " >
+    
     <h6 class="text-center">Please Enter atleast 50 words,seperated by comma or select from given list of themes.</h6>
-    <div class="div container py-3 d-flex theme justify-content-center">
+    <!-- <h6 class="text-center"><a href="" >Click here to view rules...</a> </h6> -->
+    
+
+
+<!-- Rules Modal -->
+<div class="modal fade" id="rulesmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header ">
+        <h5  id="exampleModalLongTitle">RULES</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="rulesData">
+        
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Prize Modal -->
+<div class="modal fade" id="prizemodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header ">
+        <h5  id="exampleModalLongTitle">PRIZES</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="prizesData">
+        <table class="table table-bordered prize table-striped">
+          <thead class="thead-dark">
+            <tr class="text-center ">
+              <th scope="col">#</th>
+              <th scope="col">Type</th>
+              <th scope="col">Type Description</th>
+              <th scope="col">Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Early 7</td>
+              <td>You are done with first 7 tick of your ticket.</td>
+              <td>INR 100</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>4 Corners</td>
+              <td>done with all 4 corner nos. of your ticket (1st and last no. of 1st line and 1st and last no. of last line)</td>
+              <td>INR 100</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>First Line <br> Second Line <br>Third Line</td>
+              <td>You are done with all ticks of your First Line or Second or Third Line.</td>
+              <td>INR 100 /line</td>
+            </tr>
+            <tr>
+              <th scope="row">4</th>
+              <td>First Housie <br> Second Housie <br>Third Housie</td>
+              <td>You are done with all ticks of your ticket.</td>
+              <td>1st house - INR 200<br>
+                2nd house - INR 200 <br> 
+                3rd house - INR 100 <br>
+                </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="div container py-3  theme justify-content-center">
 
       <select class="form-control" name="" id="themes">
         <option value="">Select</option>
         <option value="countries">Countries</option>
         <option value="capitals">Capitals</option>
         <option value="indianDistricts">Indian Districts</option>
+        <option value="movies">Indian Movies</option>
       </select>
       
       
       
-          
+      
       </div>
     <div class="text-center"><span class="text-center" id="comments"></span></div>
+    
     <div class="div container  d-flex justify-content-center">
-
+      
     <textarea name="" id="input-words" cols="50" rows="10"></textarea>
     
     
@@ -49,26 +147,27 @@
         
     </div>
     
-    <div class="div container  mt-4 d-flex justify-content-center">
+    <div class="div container  mt-4 d-flex justify-content-center" id="gen-scroll">
 
-        <button type="submit" id="input-button" class="btn btn-primary mr-2">Submit</button>
-        <input type="text" class="form-control" name="" id="no-of-tickets" placeholder="No. of tickets to generate">
-        <button type="submit" id="generate-button" class="btn btn-success ml-2">Generate</button>
+        <button type="submit" id="input-button" class="btn btn-primary mr-2 px-4">Submit</button>
+        <input type="number" class="form-control" name="" required min=0 id="no-of-tickets" placeholder="No. of tickets to generate">
+        <a href="#gen-scroll"><button type="submit"  id="generate-button"  class="btn btn-success ml-2">Generate</button></a>
         <button type="submit" id="host-button" class="btn btn-warning ml-2">Host</button>
         
             
         </div>
         <div class="d-flex justify-content-center mt-2 mr-2">
 
-          <input type="button" id="print-btn" class="btn btn-sm btn-dark mr-2 " onclick="printDiv()" 
-          value="Print Tickets" />
-          <input type="button" id="reset-btn" class="btn btn-sm btn-info mb-2" onclick="window.location.reload()"
+          
+          <input type="button" id="reset-btn" class="btn btn-info   " onclick="window.location.reload()"
           value="Reset Data" />
+
           
           
           
               
           </div>
+          
    
     
     </div>
@@ -87,35 +186,65 @@
                     
                 </div>
                 
-                
+               
                 
             
             </div>
+
+            
             <div><h6 class="text-center"><span id="remaining-words"></span></h6></div>
             <div class="word-display shadow ml-auto">
-                <h4 class="text-center text-primary bingo-word pb-5">Random Word</h4>
+                <h4 class="text-center text-primary bingo-word pb-5"></h4>
 
             </div>
         
             
             
     </div>
-    
+    <div class="color-scheme container py-3 shadow my-2 bg-dark rounded">
+      <h6 class="text-center text-white">Select Color scheme for tickets</h3>
+        <div class="d-flex justify-content-center mt-2 mr-2">
+          <button class="clr-btn bg-danger" id="table-danger"></button>   
+          <button class="clr-btn bg-primary" id="table-primary"></button>  
+          <button class="clr-btn bg-warning" id="table-warning"></button>   
+          <button class="clr-btn bg-success" id="table-success"></button>  
+          <button class="clr-btn bg-secondary" id="table-secondary"></button>
+          <button class="clr-btn bg-gradient-primary" id=""></button>     
+          </div>
+          <div class="d-flex justify-content-center mt-2 mr-2">
+
+            <input type="button" id="print-btn" class="btn btn-light  px-2" onclick="printDiv()" 
+            value="Print Ticket" />
+
+                
+            </div>
+        
+    </div> 
+    <div class="container shadow rounded ticket-div mb-5 py-5 display-inline" id="printable">
+      <h3 class="text-center">Ticket List</h3>
+      <div class="row ticket-div-row ">
+        
+        
+                 
+                 
+      </div>
 
     
     
-    <div class="container shadow rounded ticket-div my-5 display-inline" id="printable">
+    <!-- <div class="container shadow rounded ticket-div my-5 display-inline" id="printable">
       <h3 class="text-center">Ticket List</h3>
-      <div class="row ticket-div-row  pl-5">
+      <div class=" ticket-div-row  pl-5">
                  
           
-      </div>
+      </div> -->
       
       
   </div>
-    <footer class="footer bg-dark py-2">
+  
+  <!-- <a href="#top" id="myBtn" title="Go to top"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></a> -->
+    <footer class="footer bg-light  py-1">
         <div class="container text-center">
-         <p class="text-white">Designed & developed by Bharat Rathore</p> 
+         <p class="text-dark">Created by <span class="flag-icon flag-icon-in"> </span></p> 
         </div>
       </footer>
     
@@ -127,5 +256,6 @@
     
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="app.js"></script>
+    </div>
 </body>
 </html>
