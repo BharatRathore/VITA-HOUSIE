@@ -274,14 +274,14 @@ let wordgenerator=()=>{
 let head=document.getElementById('head')
 console.log(head)
 function printDiv() {
-    var printContents = document.getElementById('printable').innerHTML;
-    //var bdy=document.getElementsByClassName('wrapper');
-    var originalContents = document.body.innerHTML;
+    // var printContents = document.getElementById('printable').innerHTML;
+    // var bdy=document.getElementsByClassName('wrapper');
+    // var originalContents = document.body.innerHTML;
     
-    document.body.innerHTML=printContents
+    // document.body.innerHTML=printContents
    
     window.print()
-    document.body.innerHTML=originalContents
+    //document.body.innerHTML=originalContents
     //window.location.reload()
     
  
