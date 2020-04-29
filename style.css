@@ -17,7 +17,7 @@ html {
   body {
     position: relative;
     margin: 0;
-    padding-bottom: 6rem;
+    padding-bottom: 1rem;
     min-height: 100%;
     font-family: 'Poppins', sans-serif !important;
     
@@ -71,12 +71,7 @@ footer {
     font-size: small;
   }
 
-  @media print{
-    .avoid{
-      
-      page-break-inside: avoid;
-    }
-  }
+ 
 
   #myBtn {
     display: block; /* Hidden by default */
@@ -117,5 +112,10 @@ footer {
 
 }
 
-
+@media print
+{
+body * { visibility: hidden; }
+#printable * { visibility: visible; }
+#printable { position: absolute; top: 40px; left: 30px; }
+}
 
