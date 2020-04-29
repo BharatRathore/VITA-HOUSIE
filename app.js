@@ -1,7 +1,7 @@
 
 const inputButton = document.getElementById('input-button')
 const generateButton = document.getElementById('generate-button')
-const hostbtn = document.getElementById('host-button')
+//const hostbtn = document.getElementById('host-button')
 let bingoWord=document.querySelector('.bingo-word')
 let wordGenerator=document.querySelector('#word-generator')
 const hostDiv=document.querySelector('.host')
@@ -29,7 +29,7 @@ printBtn.style.display="none"
 hostDiv.style.display="none"
 noOfTickets.style.display="none"
 generateButton.style.display="none";
-hostbtn.style.display="none";
+//hostbtn.style.display="none";
 outerTicketDiv.style.display="none";
 //printableDiv.style.display="none"
 
@@ -74,13 +74,17 @@ fetch('https://indian-cities-api-nocbegfhqg.now.sh/cities')
 
 //Movie Data
 let movielist=["JULIE","BAAZIGAR","ANMOL","KAALIA","BAAGHI","BICHOO","HAT TRICK","ISHQZAADE","ZUBAIDA","HERA PHERI","STREE","DILWALE","ANAMIKA","DREAM GIRL","KHUSHBOO","DIL CHAHTA HAI","KABIR SINGH","MASOOM","KUDRAT","HINDI MEDIUM","RAM LAKHAN","GULLY BOY","OMKARA","QUEEN","AWAARA","LIFE PARTNER","GURU","NAMASTE LONDON","ARADHANA","ANKAHI","DHOL","PADOSAN","BLACK","ROCK STAR","RAID","TAARE ZAMEEN PAR","WOH KAUN THI","AASHIQUI","DADDY COOL","TAMASHA","PHILLAURI","JODI NO 1","RAABTA","BUDHA MIL GAYA","RACE","DHAMAAL","BARSAAT","TRISHUL","CHAMATKAAR","GOAL","GOOD NEWS","RANGOON","REFUGEE","JODHA AKBAR","BEES SAAL PEHLE","HEROPANTI","LOAFER","ROZA","TAAL","PARDESI BABU","KARAN ARJUN","NO ENTRY","KATI PATANG","KAL HO NA HO","QAYAMAT","KAI PO CHE","FANAA","AAG","JUAARI","PADMAN","RAJU CHACHA","KHAKHEE","APARTMENT","SILSILA","AAR PAAR","SUI DHAGA","LAGAAN","MULK","ASLI NAQLI","WELCOME "]
-
+let numberslist=[]
+for(i=1;i<100;i++){
+    numberslist.push(i)
+}
 
 let apiwords={
     countries:countryName,
     capitals:capitals,
     indianDistricts:districts,
-    movies:movielist
+    movies:movielist,
+    numbers:numberslist
 }
 console.log(apiwords)
 
@@ -157,7 +161,7 @@ let createTicket=()=>{
     </tr>
     <tr class=" tbl-clr">
      <td class="align-middle">${ticket[4]}</td>
-     <td class="align-middle">${ticket[4]}</td>
+     <td class="align-middle">${ticket[5]}</td>
      <td class="align-middle">${ticket[6]}</td>
      <td class="align-middle">${ticket[7]}</td>
      
@@ -191,7 +195,7 @@ let createTicket=()=>{
 generateButton.addEventListener('click',e=>{
     
     
-    
+    hostDiv.style.display="block"
     let n=noOfTickets.value
     ticketDiv.innerHTML='';
     ticketid=1;
@@ -200,7 +204,7 @@ generateButton.addEventListener('click',e=>{
     }
 
     outerTicketDiv.style.display="block";
-    hostbtn.style.display="block"
+    //hostbtn.style.display="block"
     //printableDiv.style.display="block"
     //ticketDiv.style.display="block";
     printBtn.style.display="block"
@@ -232,16 +236,16 @@ clrBtns.forEach(btn=>{
 
 
 
-hostbtn.addEventListener('click',()=>{
-    hostDiv.style.display="block"
-    console.log("host")
-})
+// hostbtn.addEventListener('click',()=>{
+    //hostDiv.style.display="block"
+//     console.log("host")
+// })
 
 
 let hostWords=[];
 let hostNumbers=[];
 let count=0
-wordGenerator.addEventListener('click',e=>{
+let wordgenerator=()=>{
     max=wordlist.length-1
     let flag=1;
     if(hostWords.length!=wordlist.length){
@@ -266,7 +270,7 @@ wordGenerator.addEventListener('click',e=>{
     }
     
     
-})
+}
 let head=document.getElementById('head')
 console.log(head)
 function printDiv() {
@@ -278,7 +282,7 @@ function printDiv() {
    
     window.print()
     document.body.innerHTML=originalContents
-
+    //window.location.reload()
     
  
 

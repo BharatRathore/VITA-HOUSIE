@@ -29,8 +29,8 @@
     <nav class="navbar navbar-expand navbar-dark bg-dark mb-3 sticky-top" >
         <div class="nav navbar-nav">
             <a class="nav-item nav-link active" href="#top">SM VITA BINGO <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link" href="#" data-toggle="modal" data-target="#rulesmodal">RULES</a>
-            <a class="nav-item nav-link" href="#" data-toggle="modal" data-target="#prizemodal">PRIZE</a>
+            <a class="nav-item nav-link" href="#" data-toggle="modal" data-target="#rulesmodal"><i class="fas fa-clipboard    "></i> RULES</a>
+            <a class="nav-item nav-link" href="#" data-toggle="modal" data-target="#prizemodal"> <i class="fas fa-trophy    "></i> PRIZE</a>
         </div>
     </nav>
     <span id="top m-0"></span>
@@ -126,6 +126,7 @@
 
       <select class="form-control" name="" id="themes">
         <option value="">Select</option>
+        <option value="numbers">Numbers (1-99)</option>
         <option value="countries">Countries</option>
         <option value="capitals">Capitals</option>
         <option value="indianDistricts">Indian Districts</option>
@@ -152,7 +153,7 @@
         <button type="submit" id="input-button" class="btn btn-primary mr-2 px-4">Submit</button>
         <input type="number" class="form-control" name="" required min=0 id="no-of-tickets" placeholder="No. of tickets to generate">
         <a href="#gen-scroll"><button type="submit"  id="generate-button"  class="btn btn-success ml-2">Generate</button></a>
-        <button type="submit" id="host-button" class="btn btn-warning ml-2">Host</button>
+        <!-- <button type="submit" id="host-button" class="btn btn-warning ml-2">Host</button> -->
         
             
         </div>
@@ -181,7 +182,7 @@
             <div class="div pb-3 d-flex-column justify-content-center">
         
                 
-                <button type="submit" id="word-generator" class="btn btn-secondary mx-2">Click to Generate Next Word</button>
+                <button type="submit" id="word-generator" onclick=wordgenerator() class="btn btn-secondary mx-2">Click to Generate Next Word</button>
                 
                     
                 </div>
