@@ -86,11 +86,11 @@ let apiwords={
     movies:movielist,
     numbers:numberslist
 }
-console.log(apiwords)
+//console.log(apiwords)
 
 themes.addEventListener('change',e=>{
     if(themes.value){
-        console.log(apiwords[themes.value])
+        //console.log(apiwords[themes.value])
         userInput.value=apiwords[themes.value]
     }
 
@@ -126,7 +126,7 @@ let createTicket=()=>{
     let rand;
     for(let i=0;i<12;){
         rand=Math.floor(Math.random() * (max + 1) )
-        console.log(rand)
+        //console.log(rand)
         if(!test.includes(rand)){
             test.push(rand)
         ticket.push(wordlist[rand])
@@ -210,8 +210,8 @@ generateButton.addEventListener('click',e=>{
     printBtn.style.display="block"
    
 
-    console.log(ticket)
-    console.log(test)
+    //console.log(ticket)
+    //console.log(test)
 })
 
 
@@ -220,14 +220,14 @@ generateButton.addEventListener('click',e=>{
 let clrBtns=document.querySelectorAll('.clr-btn')
 clrBtns.forEach(btn=>{
     btn.addEventListener('mouseover',e=>{
-        console.log(e.target.id)
+        //console.log(e.target.id)
         
         let tblRows=document.querySelectorAll('.tbl-clr')
         tblRows.forEach(row=>{
             row.classList=[]
             if (e.target.id) {row.classList.add(e.target.id)}
             row.classList.add('tbl-clr')
-            console.log(row)
+            //console.log(row)
             
 })
     })
@@ -261,7 +261,7 @@ let wordgenerator=()=>{
         }
         bingoWord.innerText=wordlist[rand]
         remWordCount.innerText=`${max+1-count} Words Remaining`
-    console.log(hostWords)
+    //console.log(hostWords)
     }
     else{
         remWordCount.innerText=`Last Word`
@@ -271,8 +271,7 @@ let wordgenerator=()=>{
     
     
 }
-let head=document.getElementById('head')
-console.log(head)
+
 function printDiv() {
     // var printContents = document.getElementById('printable').innerHTML;
     // var bdy=document.getElementsByClassName('wrapper');
